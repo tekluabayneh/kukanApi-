@@ -74,11 +74,6 @@ const Auth = () => {
 
   return (
     <div className="bg-gradient-to-r from-blue-500 to-teal-500 h-screen flex gap-5 items-center justify-center relative">
-      {/* Back to Home Link */}
-      <Link to="/" className="absolute top-4 left-5 text-white hover:underline">
-        Back Home
-      </Link>
-
       {/* Login Form */}
       <div
         ref={loginRef}

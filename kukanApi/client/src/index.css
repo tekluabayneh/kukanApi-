@@ -1,1 +1,18 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "Agu Display";
+  src: url("./assets/Agu_Display/AguDisplay-Regular-VariableFont_MORF.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.customfont {
+  font-family: "Agu Display", sans-serif;
+}

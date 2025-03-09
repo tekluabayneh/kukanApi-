@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 // Assets in public/assets/
-import openIcon from "/assets/open.svg";
-import closeIcon from "/assets/close.svg";
+import openIcon from "../../assets/open.svg";
+import closeIcon from "../../assets/close.svg";
 
 const UsersDocs = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const smallNavRef = useRef(null);
   const headerRef = useRef(null);
-
+  const codeRef = useRef(null);
   // Toggle mobile navigation
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -41,7 +41,17 @@ const UsersDocs = () => {
       });
     }
   }, [isNavOpen]);
-
+  useEffect(() => {
+    // Highlight the code after the component mounts
+    if (codeRef.current) {
+      const codeBlocks = codeRef.current.querySelectorAll(
+        "language-javascript"
+      );
+      codeBlocks.forEach((block) => {
+        block.Prism.highlightElement(block);
+      });
+    }
+  }, []);
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -192,11 +202,11 @@ const UsersDocs = () => {
               all items.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
+              <pre className="language-javascript rounded-lg" ref={codeRef}>
                 <code>
                   {`fetch('https://kukandummyjson.onrender.com/users?api_key=your_api-key')
-  .then(res => res.json())
-  .then(json => console.log(json))`}
+                  .then(res => res.json())
+                  .then(json => console.log(json))`}
                 </code>
               </pre>
             </div>
@@ -223,7 +233,7 @@ const UsersDocs = () => {
             </div>
             <p>Get single user by their id</p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
+              <pre className="language-javascript rounded-lg" ref={codeRef}>
                 <code>
                   {`fetch('https://kukandummyjson.onrender.com/users/2?api_key=your_api-key')
   .then(res => res.json())
@@ -258,7 +268,7 @@ const UsersDocs = () => {
               <span className="text-red-500">user already exist</span> message.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
+              <pre className="language-javascript rounded-lg" ref={codeRef}>
                 <code>
                   {`fetch('https://kukandummyjson.onrender.com/users/adduser?api_key=your_api-key', {
   method: "POST",
@@ -304,7 +314,7 @@ const UsersDocs = () => {
               params
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
+              <pre className="language-javascript rounded-lg" ref={codeRef}>
                 <code>
                   {`fetch('https://kukandummyjson.onrender.com/users/limit/2?api_key=your_api-key')
   .then(res => res.json())
@@ -341,7 +351,7 @@ const UsersDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
+              <pre className="language-javascript rounded-lg" ref={codeRef}>
                 <code>
                   {`fetch('https://kukandummyjson.onrender.com/users/deleteuser/2?api_key=apikey')
   .then(res => res.json())
@@ -378,7 +388,7 @@ const UsersDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
+              <pre className="language-javascript rounded-lg" ref={codeRef}>
                 <code>
                   {`fetch('https://kukandummyjson.onrender.com/users/update/4?api_key=your_api-key', {
   method: "PUT",
