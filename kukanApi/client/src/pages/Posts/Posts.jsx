@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 // Assets in public/assets/
-import openIcon from "/assets/open.svg";
-import closeIcon from "/assets/close.svg";
+import openIcon from "../../assets/open.svg";
+import closeIcon from "../../assets/close.svg";
 
 const PostsDocs = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -102,7 +102,7 @@ const PostsDocs = () => {
             </li>
             <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
               <Link
-                to="/docs/users"
+                to="/users"
                 className="text-[2.5rem] font-extrabold text-white customfont"
                 onClick={toggleNav}
               >
@@ -425,7 +425,7 @@ const PostsDocs = () => {
           <div className="sticky top-96 text-center">
             <ul className="flex flex-col gap-24 items-center">
               <li className="flex items-center group transition-all relative">
-                <Link to="/docs/users">
+                <Link to="/users">
                   <span className="absolute hidden top-1 right-9 group-hover:block bg-black rounded px-2">
                     users!
                   </span>
@@ -448,7 +448,7 @@ const PostsDocs = () => {
                 </Link>
               </li>
               <li className="flex items-center group transition-all relative">
-                <Link to="/docs/product">
+                <Link to="/product">
                   <span className="absolute hidden top-1 right-9 group-hover:block bg-black rounded px-2">
                     product!
                   </span>
@@ -471,7 +471,7 @@ const PostsDocs = () => {
                 </Link>
               </li>
               <li className="flex items-center group transition-all relative">
-                <Link to="/docs/posts">
+                <Link to="/posts">
                   <span className="absolute hidden top-1 right-9 group-hover:block bg-black rounded px-2">
                     posts!
                   </span>
@@ -494,7 +494,7 @@ const PostsDocs = () => {
                 </Link>
               </li>
               <li className="flex items-center group transition-all relative">
-                <Link to="/docs/quotes">
+                <Link to="/quotes">
                   <span className="absolute hidden top-1 right-9 group-hover:block bg-black rounded px-2">
                     quotes!
                   </span>
