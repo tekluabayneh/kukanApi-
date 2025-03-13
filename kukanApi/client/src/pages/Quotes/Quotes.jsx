@@ -83,71 +83,7 @@ const QuotesDocs = () => {
         />
       </header>
 
-      {/* Mobile Nav */}
-      <div
-        ref={smallNavRef}
-        className="smallnav w-full h-screen absolute top-0 left-0 bg-black z-50 md:hidden"
-        style={{ transform: "translateX(-100%)" }}
-      >
-        <nav className="pt-10 flex items-baseline justify-between">
-          <ul className="flex flex-col gap-3 items-start pl-5">
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                to="/"
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                onClick={toggleNav}
-              >
-                Home
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                to="/users"
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                onClick={toggleNav}
-              >
-                Doc
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                to="/api"
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                onClick={toggleNav}
-              >
-                Api
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                to="/auth"
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                onClick={toggleNav}
-              >
-                Login
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <a
-                href="https://github.com/tekluabayneh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                onClick={toggleNav}
-              >
-                GitHub
-              </a>
-            </li>
-          </ul>
-          <img
-            className="closenav m-5 cursor-pointer"
-            src={closeIcon}
-            alt="Close menu"
-            onClick={toggleNav}
-          />
-        </nav>
-      </div>
-
+  
       {/* Main Content */}
       <main className="grid grid-cols-[80%_20%] items-start pt-12 w-full bg-gradient-to-t from-pink-50 to-purple-50 min-h-screen">
         <section className="w-full h-auto grid grid-cols-1 pt-12 p-3">
