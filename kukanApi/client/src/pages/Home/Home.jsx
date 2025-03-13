@@ -8,6 +8,7 @@ import linkedinIcon from "../../assets/linkedin.svg";
 import heroImage from "../../assets/hero-image.svg";
 import multipleOptionsImage from "../../assets/multiple-options.svg";
 import wavyBuddiesImage from "../../assets/WavyBuddies.png";
+import SmallWidthNav from "../../components/MobileNav/smallWidthNav";
 
 const Home = () => {
   // Placeholder for script loading (GSAP, jQuery, etc.)
@@ -18,69 +19,8 @@ const Home = () => {
 
   return (
     <div className="bg-white">
-      {/* Header */}
-      
-      {/* Small Width Nav */}
-      <div
-        className="smallnav w-full h-auto absolute top-0 left-0 bg-black z-50 md:hidden"
-        style={{ transform: "translateX(-5000px)" }}
-      >
-        <nav className="pt-10 flex items-baseline justify-between">
-          <ul className="flex flex-col gap-3 items-start pl-5">
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                to="/"
-              >
-                home
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                to="/Docs"
-              >
-                doc
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                to="/Api"
-              >
-                api
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                to="/login"
-              >
-                login
-              </Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <a
-                className="text-[2.5rem] font-extrabold text-white customfont"
-                href="https://github.com/tekluabayneh"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github
-              </a>
-            </li>
-          </ul>
-          <div className="text-white">
-            <img
-              className="closenav text-white bg-white m-5 cursor-pointer"
-              src={closeIcon}
-              alt="Close menu"
-            />
-          </div>
-        </nav>
-      </div>
-
-
+          {/* Small Width Nav */}
+      <SmallWidthNav />
       {/* Back to Top Button */}
       <div className="relative group">
         <div className="backToTop fixed cursor-pointer right-4 bottom-4 w-12 h-12 rounded-full ring-1">
@@ -90,7 +30,6 @@ const Home = () => {
           back to top!
         </div>
       </div>
-
 
       {/* Section 1 */}
       <section className="page w-full h-[40rem] md:h-screen  xl:p-2 pt-19 px-5">
@@ -446,7 +385,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
