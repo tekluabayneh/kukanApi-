@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import closeIcon from "../../assets/close.svg";
-const SmallWidthNav = () => {
+const SmallWidthNav = ({handelNav, isOpenNav }) => {
   return (
     <div
-      className="smallnav w-full h-auto absolute top-0 left-0 bg-black z-50 "
-      style={{ transform: "translateX()" }}
+      className="smallnav w-96 h-screen fixed top-0 left-0 bg-black z-50 transition-all md:hidden"
+      style={{
+        transform: isOpenNav ? "translateX(-500px)" : "translateX(0px)",
+      }}
     >
       <nav className="pt-10 flex items-baseline justify-between">
         <ul className="flex flex-col gap-3 items-start pl-5">
@@ -54,6 +56,7 @@ const SmallWidthNav = () => {
         </ul>
         <div className="text-white">
           <img
+            onClick={handelNav}
             className="closenav text-white bg-white m-5 cursor-pointer"
             src={closeIcon}
             alt="Close menu"
