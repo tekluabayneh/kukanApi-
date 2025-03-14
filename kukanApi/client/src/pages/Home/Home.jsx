@@ -20,7 +20,6 @@ const Home = () => {
   return (
     <div className="bg-white">
           {/* Small Width Nav */}
-      <SmallWidthNav />
       {/* Back to Top Button */}
       <div className="relative group">
         <div className="backToTop fixed cursor-pointer right-4 bottom-4 w-12 h-12 rounded-full ring-1">
