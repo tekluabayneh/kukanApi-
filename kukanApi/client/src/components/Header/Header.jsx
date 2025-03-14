@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import openIcon from "../../assets/open.svg";
+import SmallWidthNav from "../MobileNav/smallWidthNav";
 const Header = () => {
+  const [isOpenNav, setisOpenNav] = useState(true);
+
+  const handelNav = () => {
+    setisOpenNav(!isOpenNav);
+  };
   return (
     <header className="customnavStyle shadow-md z-10 fixed top-0 left-0 flex items-center justify-between py-8 px-8 w-full h-16">
       <div className="text-2xl font-extrabold">Kukandummyjson</div>
@@ -31,10 +37,12 @@ const Header = () => {
         </ul>
       </nav>
       <img
+        onClick={handelNav}
         className="opennav text-black w-6 h-6 cursor-pointer md:hidden"
         src={openIcon}
         alt="Open menu"
       />
+      <SmallWidthNav handelNav={handelNav} isOpenNav={isOpenNav} />
     </header>
   );
 };
