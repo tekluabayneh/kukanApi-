@@ -83,7 +83,6 @@ const ProductsDocs = () => {
         />
       </header>
 
-     
       {/* Main Content */}
       <main className="grid grid-cols-[80%_20%] items-start pt-12 w-full bg-gradient-to-t from-pink-50 to-purple-50 min-h-screen">
         <section className="w-full h-auto grid grid-cols-1 pt-12 p-3">
