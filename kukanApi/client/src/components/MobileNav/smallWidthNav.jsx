@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import closeIcon from "../../assets/close.svg";
-const SmallWidthNav = ({handelNav, isOpenNav }) => {
+const SmallWidthNav = ({ handelNav, isOpenNav }) => {
   return (
     <div
       className="smallnav w-96 h-screen fixed top-0 left-0 bg-black z-50 transition-all md:hidden"
@@ -13,6 +13,7 @@ const SmallWidthNav = ({handelNav, isOpenNav }) => {
         <ul className="flex flex-col gap-3 items-start pl-5">
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
             <Link
+              onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
               to="/"
             >
@@ -21,6 +22,7 @@ const SmallWidthNav = ({handelNav, isOpenNav }) => {
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
             <Link
+              onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
               to="/Docs"
             >
@@ -29,6 +31,7 @@ const SmallWidthNav = ({handelNav, isOpenNav }) => {
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
             <Link
+              onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
               to="/Api"
             >
@@ -37,13 +40,17 @@ const SmallWidthNav = ({handelNav, isOpenNav }) => {
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
             <Link
+              onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
               to="/login"
             >
               login
             </Link>
           </li>
-          <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
+          <li
+            onClick={handelNav}
+            className="capitalize font-bold cursor-pointer hover:underline transition-all"
+          >
             <a
               className="text-[2.5rem] font-extrabold text-white customfont"
               href="https://github.com/tekluabayneh"
@@ -54,9 +61,8 @@ const SmallWidthNav = ({handelNav, isOpenNav }) => {
             </a>
           </li>
         </ul>
-        <div className="text-white">
+        <div className="text-white" onClick={handelNav}>
           <img
-            onClick={handelNav}
             className="closenav text-white bg-white m-5 cursor-pointer"
             src={closeIcon}
             alt="Close menu"
