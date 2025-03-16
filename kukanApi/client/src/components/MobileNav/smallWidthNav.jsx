@@ -63,7 +63,7 @@ const SmallWidthNav = ({ handelNav, isOpenNav }) => {
         </ul>
         <div className="text-white" onClick={handelNav}>
           <img
-            className="closenav text-white bg-white m-5 cursor-pointer"
+            className="closenav text-white bg-white m-12 cursor-pointer"
             src={closeIcon}
             alt="Close menu"
           />
