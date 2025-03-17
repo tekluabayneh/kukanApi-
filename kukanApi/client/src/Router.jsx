@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Loading from "./components/Loading/Loading";
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Auth = React.lazy(() => import("./components/Auth"));
 const Footer = React.lazy(() => import("./pages/Footer/Footer"));
@@ -13,7 +14,7 @@ const AppRouter = () => {
   return (
     <div>
       <Router>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading />}>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
