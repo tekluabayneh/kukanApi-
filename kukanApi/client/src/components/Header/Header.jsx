@@ -9,7 +9,7 @@ const Header = () => {
     setisOpenNav(!isOpenNav);
   };
   return (
-    <header className="customnavStyle shadow-md z-10 fixed top-0 left-0 flex items-center justify-between py-8 px-8 w-full h-16">
+    <header className="customnavStyle shadow-md z-50 fixed top-0 left-0 flex items-center justify-between py-8 px-8 w-full h-16">
       <div className="text-2xl font-extrabold">Kukandummyjson</div>
       <nav className="hidden md:block">
         <ul className="flex gap-3 items-center">
