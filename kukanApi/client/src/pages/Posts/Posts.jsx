@@ -46,45 +46,8 @@ const PostsDocs = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header
-        ref={headerRef}
-        className="customnavStyle z-10 fixed top-0 left-0 flex items-center justify-between py-8 px-8 w-full h-12 bg-white shadow"
-      >
-        <div className="text-2xl font-extrabold">Kukandummyjson</div>
-        <nav className="hidden md:block">
-          <ul className="flex gap-3 items-center">
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link to="/docs/quotes">Doc</Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link to="/api">ApiKey</Link>
-            </li>
-            <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-              <Link to="/auth">Login</Link>
-            </li>
-            <button className="bg-gradient-to-r px-6 py-1 rounded-lg shadow from-purple-700 via-blue-400 to-lime-400 capitalize font-bold cursor-pointer hover:bg-transparent hover:text-black">
-              <a
-                href="https://github.com/tekluabayneh"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </button>
-          </ul>
-        </nav>
-        <img
-          className="opennav w-6 h-6 cursor-pointer md:hidden"
-          src={openIcon}
-          alt="Open menu"
-          onClick={toggleNav}
-        />
-      </header>
 
-         {/* Main Content */}
+      {/* Main Content */}
       <main className="grid grid-cols-[80%_20%] items-start pt-12 w-full bg-gradient-to-t from-pink-50 to-purple-50 min-h-screen">
         <section className="w-full h-auto grid grid-cols-1 pt-12 p-3">
           <h1 className="text-[4rem] text-left">Posts-Docs</h1>
