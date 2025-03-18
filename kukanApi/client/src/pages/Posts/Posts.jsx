@@ -1,47 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
-
-// Assets in public/assets/
-import openIcon from "../../assets/open.svg";
-import closeIcon from "../../assets/close.svg";
-import SmallWidthNav from "../../components/MobileNav/smallWidthNav";
-
 const PostsDocs = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const smallNavRef = useRef(null);
-  const headerRef = useRef(null);
-
-  // Toggle mobile navigation
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
-  // GSAP animations
-  useEffect(() => {
-    // Animate header
-    gsap.from(headerRef.current, {
-      y: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    // Animate small nav
-    if (isNavOpen) {
-      gsap.to(smallNavRef.current, {
-        x: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(smallNavRef.current, {
-        x: "-100%",
-        duration: 0.5,
-        ease: "power2.in",
-      });
-    }
-  }, [isNavOpen]);
 
   return (
     <div className="min-h-screen flex flex-col">
