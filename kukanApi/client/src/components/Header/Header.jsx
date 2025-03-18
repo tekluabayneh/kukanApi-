@@ -14,16 +14,16 @@ const Header = () => {
       <nav className="hidden md:block">
         <ul className="flex gap-3 items-center">
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link to="/">home</Link>
+            <a href="/">home</a>
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link to="/Docs">doc</Link>
+            <a href="/Docs">doc</a>
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link to="/Api">apiKey</Link>
+            <a href="/Api">apiKey</a>
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link to="/login">login</Link>
+            <a href="/login">login</a>
           </li>
           <button className="bg-gradient-to-r px-6 py-1 rounded-lg shadow from-purple-700 via-blue-400 to-lime-400 capitalize font-bold cursor-pointer hover:bg-transparent hover:text-black">
             <a
