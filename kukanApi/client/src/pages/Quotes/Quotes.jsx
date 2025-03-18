@@ -2,50 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
-// Assets in public/assets/
-import openIcon from "../../assets/open.svg";
-import closeIcon from "../../assets/close.svg";
-
 const QuotesDocs = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const smallNavRef = useRef(null);
-  const headerRef = useRef(null);
-
-  // Toggle mobile navigation
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
-  // GSAP animations
-  useEffect(() => {
-    // Animate header
-    gsap.from(headerRef.current, {
-      y: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    // Animate small nav
-    if (isNavOpen) {
-      gsap.to(smallNavRef.current, {
-        x: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(smallNavRef.current, {
-        x: "-100%",
-        duration: 0.5,
-        ease: "power2.in",
-      });
-    }
-  }, [isNavOpen]);
-
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-   
       {/* Main Content */}
       <main className="grid grid-cols-[80%_20%] items-start pt-12 w-full bg-gradient-to-t from-pink-50 to-purple-50 min-h-screen">
         <section className="w-full h-auto grid grid-cols-1 pt-12 p-3">
