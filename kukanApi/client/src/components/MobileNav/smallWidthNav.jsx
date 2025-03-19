@@ -12,40 +12,40 @@ const SmallWidthNav = ({ handelNav, isOpenNav }) => {
       <nav className="pt-10 flex items-baseline justify-between">
         <ul className="flex flex-col gap-3 items-start pl-5">
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link
+            <a
               onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
-              to="/"
+              href="/"
             >
               home
-            </Link>
+            </a>
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link
+            <a
               onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
-              to="/Docs"
+              href="/Docs"
             >
               doc
-            </Link>
+            </a>
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link
+            <a
               onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
-              to="/Api"
+              href="/Api"
             >
               api
-            </Link>
+            </a>
           </li>
           <li className="capitalize font-bold cursor-pointer hover:underline transition-all">
-            <Link
+            <a
               onClick={handelNav}
               className="text-[2.5rem] font-extrabold text-white customfont"
-              to="/login"
+              href="/login"
             >
               login
-            </Link>
+            </a>
           </li>
           <li
             onClick={handelNav}
