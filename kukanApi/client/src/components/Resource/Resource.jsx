@@ -15,7 +15,7 @@ const Resource = ({ name, icon, why }) => (
         <path strokeLinecap="round" strokeLinejoin="round" d={icon} />
       </svg>
     </div>
-    <div className="text-center pt-10 px-12">
+    <div className="text-center pt- px-12">
       <h6 className="font-bold">Why Use Our {name} API?</h6>
       {why.map((text, idx) => (
         <p key={idx} className="text-[10px]">
