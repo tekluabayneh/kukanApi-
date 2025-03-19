@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true); // Toggle between login and register
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({});
+
+  const [isLogin, setIsLogin] = useState(true);
   const [loginMessage, setLoginMessage] = useState("");
   const [registerMessage, setRegisterMessage] = useState("");
   const loginRef = useRef(null);
@@ -33,36 +37,17 @@ const Auth = () => {
   }, [isLogin]);
 
   // Handle login form submission
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    // Placeholder for login logic (e.g., API call)
-    if (!loginEmail || !loginPassword) {
-      setLoginMessage("Please fill in all fields");
-    } else {
-      setLoginMessage("Login attempt successful (demo)");
-      console.log("Login:", { email: loginEmail, password: loginPassword });
-      // Reset form
-      setLoginEmail("");
-      setLoginPassword("");
-    }
+  const handleLoginSubmit = (data) => {
+    const { login_email, login_password } = data;
+    console.log(login_email, login_password);
+    reset();
   };
 
   // Handle register form submission
-  const handleRegisterSubmit = (e) => {
-    e.preventDefault();
-    // Placeholder for register logic (e.g., API call)
-    if (!registerEmail || !registerPassword) {
-      setRegisterMessage("Please fill in all fields");
-    } else {
-      setRegisterMessage("Registration attempt successful (demo)");
-      console.log("Register:", {
-        email: registerEmail,
-        password: registerPassword,
-      });
-      // Reset form
-      setRegisterEmail("");
-      setRegisterPassword("");
-    }
+  const handleRegisterSubmit = (data) => {
+    const { register_email, register_password } = data;
+    console.log(register_email, register_password);
+    reset();
   };
 
   // Toggle between login and register
@@ -85,7 +70,7 @@ const Auth = () => {
           Login
         </h2>
         <p className="show_loginmessage text-red-500">{loginMessage}</p>
-        <form className="space-y-6" onSubmit={handleLoginSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit(handleLoginSubmit)}>
           {/* Email Input */}
           <div className="space-y-2">
             <label
@@ -97,12 +82,15 @@ const Auth = () => {
             <input
               type="email"
               name="email"
-              className="login_email w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register("login_email", {
+                required: "email is mandatory",
+              })}
               placeholder="Enter your email"
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
-              required
+              className="login_email w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <span className="text-red-500 pt-1">
+              {errors.login_email?.message}
+            </span>
           </div>
 
           {/* Password Input */}
@@ -116,12 +104,15 @@ const Auth = () => {
             <input
               type="password"
               name="password"
-              className="login_password w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register("login_password", {
+                required: "password is mandatory",
+              })}
               placeholder="Enter your password"
-              value={loginPassword}
-              onChange={(e) => setLoginPassword(e.target.value)}
-              required
+              className="login_password w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <span className="text-red-500 pt-1">
+              {errors.login_password?.message}
+            </span>
           </div>
 
           {/* Forgot Password Link */}
@@ -167,7 +158,10 @@ const Auth = () => {
           Register
         </h2>
         <p className="show_registermessage text-red-500">{registerMessage}</p>
-        <form className="space-y-6" onSubmit={handleRegisterSubmit}>
+        <form
+          className="space-y-6"
+          onSubmit={handleSubmit(handleRegisterSubmit)}
+        >
           {/* Email Input */}
           <div className="space-y-2">
             <label
@@ -179,12 +173,15 @@ const Auth = () => {
             <input
               type="email"
               name="email"
+              {...register("register_email", {
+                required: "email is mandatory",
+              })}
               className="register_email w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
-              value={registerEmail}
-              onChange={(e) => setRegisterEmail(e.target.value)}
-              required
             />
+            <span className="text-red-500 pt-1">
+              {errors.register_email?.message}
+            </span>
           </div>
 
           {/* Password Input */}
@@ -198,12 +195,15 @@ const Auth = () => {
             <input
               type="password"
               name="password"
+              {...register("register_password", {
+                required: "password is mandatory",
+              })}
               className="register_password w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your password"
-              value={registerPassword}
-              onChange={(e) => setRegisterPassword(e.target.value)}
-              required
             />
+            <span className="text-red-500 pt-1">
+              {errors.register_password?.message}
+            </span>
           </div>
 
           {/* Forgot Password Link */}
