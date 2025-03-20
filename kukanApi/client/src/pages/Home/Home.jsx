@@ -38,7 +38,8 @@ const Home = () => (
         </div>
       </div>
     </section>
-
+    
+    
     {/* Footer Section */}
     <section className="xl:mt-44 md:mt-0 page text-center bg-gradient-to-r from-teal-50 to-blue-50 grid place-content-center w-full h-[40rem] md:h-screen pt-20 px-5">
       <div className="grid place-content-center">
