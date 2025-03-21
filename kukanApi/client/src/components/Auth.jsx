@@ -40,15 +40,20 @@ const Auth = () => {
 
   // Handle login form submission
   const handleLoginSubmit = (data) => {
+    // url: "https://kukandummyjson.onrender.com/user_apikey/login",
     const { login_email, login_password } = data;
     console.log(login_email, login_password);
+
+    alert("asasa");
     reset();
   };
-
+  
   // Handle register form submission
   const handleRegisterSubmit = (data) => {
+    //  "https://kukandummyjson.onrender.com/user_apikey/register",
     const { register_email, register_password } = data;
     console.log(register_email, register_password);
+    alert("asasa");
     reset();
   };
 
