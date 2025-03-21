@@ -1,9 +1,10 @@
+import { Mutation, useMutation, useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useRef } from "react";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { gsap } from "gsap";
-import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
+import { useForm } from "react-hook-form";
+import Login from "../pages/Auth/Login";
+import { gsap } from "gsap";
+import axios from "axios";
 
 const Auth = () => {
   const {
@@ -38,22 +39,59 @@ const Auth = () => {
     }
   }, [isLogin]);
 
+  const LoginMutate = useMutation({
+    mutationFn: (userInfo) => {
+      axios
+        .get("https://kukandummyjson.onrender.com/user_apikey/login", userInfo)
+        .then((res) => res.data);
+    },
+    onSuccess: () => {
+      console.log("user successfully loged in");
+    },
+
+    onError: (error) => {
+      console.log("error while login the use", error);
+    },
+    onSettled: () => {
+      console.log("user loged in successfully");
+    },
+  });
+
   // Handle login form submission
   const handleLoginSubmit = (data) => {
-    // url: "https://kukandummyjson.onrender.com/user_apikey/login",
-    const { login_email, login_password } = data;
+    const { login_email = email, login_password = password } = data;
     console.log(login_email, login_password);
-
+    LoginMutate.mutate(data);
     alert("asasa");
     reset();
   };
-  
+
+  const mutation = useMutation({
+    mutationFn: (userInfo) => {
+      axios
+        .post(
+          "https://kukandummyjson.onrender.com/user_apikey/register",
+          userInfo
+        )
+        .then((res) => res.data);
+    },
+    onSuccess: (data) => {
+      console.log("User registered:", data);
+    },
+    onError: (error) => {
+      console.error(
+        "Registration failed:",
+        error.response?.data || error.message
+      );
+    },
+    onSettled: () => {
+      console.log("Registration attempt completed");
+    },
+  });
   // Handle register form submission
   const handleRegisterSubmit = (data) => {
-    //  "https://kukandummyjson.onrender.com/user_apikey/register",
-    const { register_email, register_password } = data;
-    console.log(register_email, register_password);
-    alert("asasa");
+    const { register_email = email, register_password = password } = data;
+    mutation.mutate(data);
     reset();
   };
 
