@@ -8,11 +8,13 @@ const Login = forwardRef(
     {
       isLogin,
       loginMessage,
-      handleSubmit,
       handleLoginSubmit,
+      handleSubmit,
       register,
       errors,
       toggleForm,
+      isLoading,
+      buttonRef,
     },
     ref
   ) => {
@@ -78,7 +80,7 @@ const Login = forwardRef(
                 type="submit"
                 className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                Login
+                {isLoading ? "Loading..." : "login"}
               </button>
             </div>
           </div>
@@ -94,6 +96,7 @@ const Login = forwardRef(
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}
             <button
+              ref={buttonRef}
               onClick={toggleForm}
               className="loginBtn text-blue-500 hover:text-blue-700"
             >
