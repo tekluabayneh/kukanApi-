@@ -13,6 +13,8 @@ const Register = forwardRef(
       register,
       errors,
       toggleForm,
+      isLoading,
+      buttonRef,
     },
     ref
   ) => {
@@ -85,11 +87,12 @@ const Register = forwardRef(
           {/* Submit Button */}
           <div>
             <button
+              ref={buttonRef}
               id="registerBtn"
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Register
+              {isLoading ? "Loading..." : "Register"}
             </button>
           </div>
         </form>
