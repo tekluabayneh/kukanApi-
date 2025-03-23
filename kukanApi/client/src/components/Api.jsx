@@ -11,9 +11,7 @@ const ApiKeyGenerator = () => {
   useEffect(() => {
     // Example: Generate a random API key (for demo purposes)
     const generateApiKey = () => {
-      return "xxxx-xxxx-xxxx-xxxx".replace(/[x]/g, () =>
-        Math.floor(Math.random() * 16).toString(16)
-      );
+      return localStorage.getItem("user_apikey");
     };
     setApiKey(generateApiKey());
     // GSAP animation for the container
