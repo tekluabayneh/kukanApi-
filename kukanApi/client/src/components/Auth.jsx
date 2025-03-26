@@ -80,7 +80,6 @@ const Auth = () => {
       email: data.login_email,
       password: data.login_password,
     };
-    console.log(loginInfo);
     LoginMutate.mutate(loginInfo);
     resetLogin();
   };
