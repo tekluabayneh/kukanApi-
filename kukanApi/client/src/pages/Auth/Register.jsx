@@ -14,7 +14,6 @@ const Register = forwardRef(
       errors,
       toggleForm,
       isLoading,
-      buttonRef,
     },
     ref
   ) => {
@@ -28,7 +27,7 @@ const Register = forwardRef(
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
           Register
         </h2>
-        <p className="show_registermessage text-red-500">{registerMessage}</p>
+        <p className="text-red-500">{registerMessage}</p>
         <form
           className="space-y-6"
           onSubmit={handleSubmit(handleRegisterSubmit)}
@@ -87,7 +86,6 @@ const Register = forwardRef(
           {/* Submit Button */}
           <div>
             <button
-              ref={buttonRef}
               id="registerBtn"
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
