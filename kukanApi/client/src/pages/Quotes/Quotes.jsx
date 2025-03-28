@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
+
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const QuotesDocs = () => {
   return (
@@ -35,13 +36,11 @@ const QuotesDocs = () => {
               all items.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/quotes?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/quotes?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -66,13 +65,11 @@ const QuotesDocs = () => {
             </div>
             <p>Get single quote by their id</p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/quotes/2?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/quotes/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -100,13 +97,11 @@ const QuotesDocs = () => {
               params
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/quotes/limit/1?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/quotes/limit/1?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -137,13 +132,11 @@ const QuotesDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/quotes/delete/3?api_key=apikey')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/quotes/delete/3?api_key=apikey')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -174,9 +167,8 @@ const QuotesDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/quotes/update?api_key=your_api-key', {
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/quotes/update?api_key=your_api-key', {
   method: "PUT",
   body: JSON.stringify({
     id: 'exa-id',
@@ -186,8 +178,7 @@ const QuotesDocs = () => {
 })
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
         </section>

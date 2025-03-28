@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const ProductsDocs = () => {
   return (
@@ -34,13 +34,11 @@ const ProductsDocs = () => {
               all items.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/product/?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/product/?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -66,13 +64,11 @@ const ProductsDocs = () => {
             <p>Get single user by their id</p>{" "}
             {/* Note: Should say "product" instead of "user" */}
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/product/2?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/product/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -102,13 +98,11 @@ const ProductsDocs = () => {
             </p>{" "}
             {/* Note: This seems misplaced; should relate to products */}
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/product/category/electronics?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/product/category/electronics?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -138,13 +132,11 @@ const ProductsDocs = () => {
             </p>{" "}
             {/* Note: Should say "product" */}
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users/limit/2?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users/limit/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -175,13 +167,11 @@ const ProductsDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/product/delete/2?api_key=apikey')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/product/delete/2?api_key=apikey')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -213,9 +203,8 @@ const ProductsDocs = () => {
             </p>{" "}
             {/* Note: Should say "product" instead of "user" */}
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/product/update/4?api_key=your_api-key', {
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/product/update/4?api_key=your_api-key', {
   method: "PUT",
   body: JSON.stringify({
     id: 'exa-id',
@@ -230,8 +219,7 @@ const ProductsDocs = () => {
 })
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
         </section>

@@ -1,20 +1,8 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 const UsersDocs = () => {
-  const codeRef = useRef(null);
 
-  useEffect(() => {
-    // Highlight the code after the component mounts
-    if (codeRef.current) {
-      const codeBlocks = codeRef.current.querySelectorAll(
-        "language-javascript"
-      );
-      codeBlocks.forEach((block) => {
-        block.Prism.highlightElement(block);
-      });
-    }
-  }, []);
   return (
     <div className="min-h-screen flex flex-col">
       {/* Main Content */}
@@ -61,13 +49,11 @@ const UsersDocs = () => {
               all items.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg" ref={codeRef}>
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users?api_key=your_api-key')
                   .then(res => res.json())
                   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -92,13 +78,11 @@ const UsersDocs = () => {
             </div>
             <p>Get single user by their id</p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg" ref={codeRef}>
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users/2?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -127,9 +111,8 @@ const UsersDocs = () => {
               <span className="text-red-500">user already exist</span> message.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg" ref={codeRef}>
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users/adduser?api_key=your_api-key', {
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users/adduser?api_key=your_api-key', {
   method: "POST",
   body: JSON.stringify({
     firstName: 'test product',
@@ -144,8 +127,7 @@ const UsersDocs = () => {
 })
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -173,13 +155,11 @@ const UsersDocs = () => {
               params
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg" ref={codeRef}>
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users/limit/2?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users/limit/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -210,13 +190,11 @@ const UsersDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg" ref={codeRef}>
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users/deleteuser/2?api_key=apikey')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users/deleteuser/2?api_key=apikey')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -247,9 +225,8 @@ const UsersDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg" ref={codeRef}>
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/users/update/4?api_key=your_api-key', {
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/users/update/4?api_key=your_api-key', {
   method: "PUT",
   body: JSON.stringify({
     id: 'exa-id',
@@ -265,8 +242,7 @@ const UsersDocs = () => {
 })
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
         </section>

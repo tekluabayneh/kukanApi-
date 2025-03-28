@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
-const PostsDocs = () => {
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+const PostsDocs = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-
       {/* Main Content */}
       <main className="grid grid-cols-[80%_20%] items-start pt-12 w-full bg-gradient-to-t from-pink-50 to-purple-50 min-h-screen">
         <section className="w-full h-auto grid grid-cols-1 pt-12 p-3">
@@ -36,13 +37,11 @@ const PostsDocs = () => {
               all items.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -67,13 +66,11 @@ const PostsDocs = () => {
             </div>
             <p>Get single post by their id</p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts/getpostById/6?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts/getpostById/6?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -102,9 +99,8 @@ const PostsDocs = () => {
               <span className="text-red-500">post already exist</span> message.
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts/addposts?api_key=your_api-key', {
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts/addposts?api_key=your_api-key', {
   method: "POST",
   body: JSON.stringify({
     id: 'exa-id',
@@ -117,8 +113,7 @@ const PostsDocs = () => {
 })
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -146,13 +141,11 @@ const PostsDocs = () => {
               params
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts/limit/2?api_key=your_api-key')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts/limit/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -183,13 +176,11 @@ const PostsDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts/search/1400?api_key=apikey')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts/search/1400?api_key=apikey')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
@@ -220,21 +211,18 @@ const PostsDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts/deletepost/4?api_key=apikey')
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts/deletepost/4?api_key=apikey')
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
 
           {/* 7. Update Post */}
           <div className="w-full pt-6">
             <div className="flex gap-1 items-center m-2">
-              <h2 className="text-2xl">Update Post</h2>{" "}
-              {/* Changed "Update User" to "Update Post" */}
+              <h2 className="text-2xl">Update Post</h2>
               <svg
                 className="w-9"
                 xmlns="http://www.w3.org/2000/svg"
@@ -258,9 +246,8 @@ const PostsDocs = () => {
               </span>
             </p>
             <div className="pr-5">
-              <pre className="language-javascript rounded-lg">
-                <code>
-                  {`fetch('https://kukandummyjson.onrender.com/posts/updatepost?api_key=your_api-key', {
+              <SyntaxHighlighter language="javascript" style={tomorrow}>
+                {`fetch('https://kukandummyjson.onrender.com/posts/updatepost?api_key=your_api-key', {
   method: "PUT",
   body: JSON.stringify({
     id: 'exa-id',
@@ -273,8 +260,7 @@ const PostsDocs = () => {
 })
   .then(res => res.json())
   .then(json => console.log(json))`}
-                </code>
-              </pre>
+              </SyntaxHighlighter>
             </div>
           </div>
         </section>
