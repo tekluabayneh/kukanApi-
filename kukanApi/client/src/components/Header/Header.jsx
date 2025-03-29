@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   const handelLoading = () => {
-    window.location.href = path; // Force reload on navigation
+    // window.location.href = path; // Force reload on navigation
   };
 
   return (
