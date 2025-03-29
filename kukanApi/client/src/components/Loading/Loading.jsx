@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loading.css";
+import "./loading.css";
 const Loading = () => {
   return (
     <div className="w-full h-screen grid bg-black place-items-center">
