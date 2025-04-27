@@ -35,7 +35,7 @@ const ProductsDocs = () => {
             </p>
             <div className="pr-5">
               <SyntaxHighlighter language="javascript" style={tomorrow}>
-                {`fetch('https://kukandummyjson.onrender.com/product/?api_key=your_api-key')
+                {`fetch('https://kukandummyjson.onrender.com/Products/?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
               </SyntaxHighlighter>
@@ -65,7 +65,7 @@ const ProductsDocs = () => {
             {/* Note: Should say "product" instead of "user" */}
             <div className="pr-5">
               <SyntaxHighlighter language="javascript" style={tomorrow}>
-                {`fetch('https://kukandummyjson.onrender.com/product/2?api_key=your_api-key')
+                {`fetch('https://kukandummyjson.onrender.com/Products/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
               </SyntaxHighlighter>
@@ -133,7 +133,7 @@ const ProductsDocs = () => {
             {/* Note: Should say "product" */}
             <div className="pr-5">
               <SyntaxHighlighter language="javascript" style={tomorrow}>
-                {`fetch('https://kukandummyjson.onrender.com/users/limit/2?api_key=your_api-key')
+                {`fetch('https://kukandummyjson.onrender.com/Products/limit/2?api_key=your_api-key')
   .then(res => res.json())
   .then(json => console.log(json))`}
               </SyntaxHighlighter>
